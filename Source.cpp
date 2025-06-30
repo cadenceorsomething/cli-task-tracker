@@ -32,18 +32,88 @@ std::string input_task_name() {
 	return task;
 }
 
+int generate_id(const json& data) {
+	const auto& tasks = data["tasks"];
+	int id = 1;
+	
+	while (true) {
+		bool found = false;
+
+		for (const auto& task : tasks) {
+			if (task.contains("id") && task["id"] == id) {
+				found = true;
+				break;
+			}
+		}
+
+		if (!found)
+			return id;
+
+		++id;
+	}
+}
+
 void add_task(json& data) {
 	std::string task = input_task_name();
-	data["tasks"].push_back({ {"name", task}, {"done", false} });
+	data["tasks"].push_back({ {"id", generate_id(data)}, {"name", task}, {"done", false} });
 }
 
 void list_tasks(const json& data) {
 	const auto& tasks = data["tasks"];
 	for (size_t i = 0; i < tasks.size(); ++i) {
-		std::cout << i << ": " << tasks[i]["name"] << (tasks[i]["done"] ? " [x]" : " [ ]") << std::endl;
+		std::cout << tasks[i]["id"] << ": " << tasks[i]["name"] << (tasks[i]["done"] ? " [x]" : " [ ]") << std::endl;
 	}
 }
 
+bool delete_task(json& data, int id_to_delete) {
+	auto& tasks = data["tasks"];
+
+	for (auto it = tasks.begin(); it != tasks.end(); ++it) {
+		if (it->contains("id") && (*it)["id"] == id_to_delete) {
+			tasks.erase(it);
+			return true;
+		}
+	}
+	return false;
+}
+
+bool cross(json& data, int id) {
+	auto& tasks = data["tasks"];
+	for (auto& task : tasks) {
+		if (task.contains("id") && task["id"] == id) {
+			task["done"] = true;
+			return true;
+		}
+
+	}
+	return false;
+}
+
+bool remove_cross(json& data, int id) {
+	auto& tasks = data["tasks"];
+	for (auto& task : tasks) {
+		if (task.contains("id") && task["id"] == id) {
+			task["done"] = false;
+			return true;
+		}
+
+	}
+	return false;
+}
+
+bool update_task(json& data, std::string new_name,int id) {
+	auto& tasks = data["tasks"];
+
+	for (auto& task : tasks) {
+		if (task.contains("id") && task["id"] == id) {
+			task["name"] = new_name;
+			return true;
+		}
+	}
+
+
+	return false;
+}
 
 int main(int argc,char *argv[]) {
 	std::string file_name = "json_file";
@@ -51,8 +121,8 @@ int main(int argc,char *argv[]) {
 	json data = load_data(file_name);
 	
 
-	add_task(data);
 
+	update_task(data,input_task_name() , 4);
 
 	save_data(data, file_name);
 

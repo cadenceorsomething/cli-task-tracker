@@ -2,31 +2,28 @@
     "tasks": [
         {
             "done": false,
-            "name": "SCREAM"
+            "id": 1,
+            "name": "rawr"
         },
         {
             "done": false,
-            "name": "whisper..."
+            "id": 3,
+            "name": "WOOWRAHHH"
+        },
+        {
+            "done": true,
+            "id": 2,
+            "name": "AAAAGH"
         },
         {
             "done": false,
-            "name": "SCREAM and whisper..."
+            "id": 4,
+            "name": "UPDATED TASK"
         },
         {
             "done": false,
-            "name": "AAAA \\n AAAA"
-        },
-        {
-            "done": false,
-            "name": ""
-        },
-        {
-            "done": false,
-            "name": ""
-        },
-        {
-            "done": false,
-            "name": "e"
+            "id": 5,
+            "name": "NEW TASK"
         }
     ]
 }
