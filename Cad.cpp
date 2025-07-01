@@ -1,11 +1,11 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include "nlohmann/json.hpp"
+#include "json.hpp"
 #include "Cad.h"
 
 
-namespace CAD {
+namespace cad {
 
 	using json = nlohmann::json;
 
@@ -52,8 +52,7 @@ namespace CAD {
 			++id;
 		}
 	}
-	void		add_task		(json& data) {
-		std::string task = input_task_name();
+	void		add_task		(json& data, std::string task) {
 		data["tasks"].push_back({ {"id", generate_id(data)}, {"name", task}, {"done", false} });
 	}
 	void		list_tasks		(const json& data) {

@@ -2,11 +2,11 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include "nlohmann/json.hpp"
+#include "json.hpp"
 
 
 
-namespace CAD {
+namespace cad {
 
 	using json = nlohmann::json;
 	
@@ -14,7 +14,7 @@ namespace CAD {
 	void		save_data		(const json&, const std::string);
 	std::string input_task_name	();
 	int			generate_id		(const json&);
-	void		add_task		(json&);
+	void		add_task		(json&, std::string);
 	void		list_tasks		(const json&);
 	bool		delete_task		(json&, int);
 	bool		cross_out		(json&, int);

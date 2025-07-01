@@ -1,0 +1,411 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "MSVC Code Analysis",
+          "version": "14.44.35209.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/main.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "940383357fc1a1a6ce3d2da9ae35b70d9dce1ac23603728af3fb8927b48ee95d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/json.hpp"
+          },
+          "hashes": {
+            "sha-256": "88242a314806097bd773d7ea7203a81a4420c695f28e4a5e8986d39bcbc4b75f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/adl_serializer.hpp"
+          },
+          "hashes": {
+            "sha-256": "80742b0081e0ac5094ad4d7a3549e969b004bb7ed86807911a8177c843701262"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/abi_macros.hpp"
+          },
+          "hashes": {
+            "sha-256": "cebb5441f1ce851444f47a7d8ea0446339ee499df83215ebd873c8347a191bd7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/conversions/from_json.hpp"
+          },
+          "hashes": {
+            "sha-256": "fb2c183ee22f77668c76b5c1106af3fcb6d9ad156fe16b18ad7fd56a1cd01aa4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/exceptions.hpp"
+          },
+          "hashes": {
+            "sha-256": "956e8ea024ed1b1203e6e604f9aa11195bc3b0cba371baeaa72e39f9452a5bc3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/value_t.hpp"
+          },
+          "hashes": {
+            "sha-256": "67ed7b164db48556bb4ae409a645401faba459081570f9b9f9ff977fd32c6114"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/macro_scope.hpp"
+          },
+          "hashes": {
+            "sha-256": "ab81c63264a051785c156f880b2b05dceb2a142f01029652638775e5c4ba5cb6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/meta/detected.hpp"
+          },
+          "hashes": {
+            "sha-256": "d144ac2ab6bb92be35bfda7eec560b9d030760e4330b7f951a2aca63469488a1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/meta/void_t.hpp"
+          },
+          "hashes": {
+            "sha-256": "c340e7b148543b0abfd719ddbc3759e23c2feffc63656136a15fd80b98ca8bf8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/thirdparty/hedley/hedley.hpp"
+          },
+          "hashes": {
+            "sha-256": "1547b367895f8be9f8283ae21f583182db572ad990236220002b632a15238712"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/string_escape.hpp"
+          },
+          "hashes": {
+            "sha-256": "58a900e91b28d1246ceae647e6a8924f9f97c2a593ced63d21191dcbe403df2c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/input/position_t.hpp"
+          },
+          "hashes": {
+            "sha-256": "0239037872b622a5f3f42fa1b453d201f977d21829b2dc4a19abe2594515eada"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/meta/cpp_future.hpp"
+          },
+          "hashes": {
+            "sha-256": "71e606c586174ff875f5996a00bc6e84a49e0919eafd6fb38c7cb928dfdf5795"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/meta/type_traits.hpp"
+          },
+          "hashes": {
+            "sha-256": "efe5985856111106958d373049b70624868696da5bd367dc9991cf5e78a5c1e6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/iterators/iterator_traits.hpp"
+          },
+          "hashes": {
+            "sha-256": "960d1fefbe7cb220292b07e4ec047bfa9a3ccbd753adaf62e5d583f746e71e47"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/meta/call_std/begin.hpp"
+          },
+          "hashes": {
+            "sha-256": "4629b547aa6b6629c266b1b474f576cbde5ce898c96502c828a72d99212b9f34"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/meta/call_std/end.hpp"
+          },
+          "hashes": {
+            "sha-256": "e09dd80f2263ff192d60bad19bdbdc5402866d0b0c8caeb9c2759b26ba864a39"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/json_fwd.hpp"
+          },
+          "hashes": {
+            "sha-256": "8777a878c20a412dd04c8011c87c3d72d74e48a4dda5e52f7948e26dd2168931"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/string_concat.hpp"
+          },
+          "hashes": {
+            "sha-256": "fb30fb50c325a1b5610a62a9061a1966b4e850dd964635c1ad1c4c9da48f7daa"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/meta/identity_tag.hpp"
+          },
+          "hashes": {
+            "sha-256": "37ff788879d4b14ffa2e79bdc75b470d2c2ca5ebadafef649312f653455d45fa"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/meta/std_fs.hpp"
+          },
+          "hashes": {
+            "sha-256": "257716f0958e9fd6c1dc3f0335716d779550353c58bc929e8dda1c79bd336701"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/conversions/to_json.hpp"
+          },
+          "hashes": {
+            "sha-256": "8cc8523b7ba2b549a0a08a0611765155a63ee81653ad3e414decfd656a520a56"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/iterators/iteration_proxy.hpp"
+          },
+          "hashes": {
+            "sha-256": "3c562f1783e1fc9476ed53d8054bc50309caa425d993996a9ddf9194fb2129cc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/string_utils.hpp"
+          },
+          "hashes": {
+            "sha-256": "85e2fbdfe07f1a44b90d5422ee1b951d1053f32e429dc4aee36274fb03fd9354"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/byte_container_with_subtype.hpp"
+          },
+          "hashes": {
+            "sha-256": "2b75a051d2f82fd95f613c70472b85a281d085f1973791c1118244099bf38942"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/hash.hpp"
+          },
+          "hashes": {
+            "sha-256": "a025807281c5d92fdfddcc993b2b2a9658146435cc10b003723b130698445c80"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/input/binary_reader.hpp"
+          },
+          "hashes": {
+            "sha-256": "9a33c56afda39957e90bd770cef686775c6aee4c115e7a207a5c2f64c638aaf8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/input/input_adapters.hpp"
+          },
+          "hashes": {
+            "sha-256": "f1260356d699a8ff4977a060d97ed5c302c1347592cc66788c0d85fe29e39ac0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/input/json_sax.hpp"
+          },
+          "hashes": {
+            "sha-256": "500139711c5316f50397eefffdba84a8f11e9b4725937c00c041d0f2fb0e3fa5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/input/lexer.hpp"
+          },
+          "hashes": {
+            "sha-256": "d930cf46ea32a19f39da672aa7d905c6bcacced51b75c1e01c1084e1bf27af3e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/meta/is_sax.hpp"
+          },
+          "hashes": {
+            "sha-256": "e60398b282767374747db20ab06101804c7345eea0761a313a298bf87b913f91"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/input/parser.hpp"
+          },
+          "hashes": {
+            "sha-256": "38d8cbde3bfbbacc28316734e6d1e74c2047c28dd310c1dd40e89b363bcc82de"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/iterators/internal_iterator.hpp"
+          },
+          "hashes": {
+            "sha-256": "bf015623518c5aab4762d9a4d21af0e85a26cdcb3fc6e69e464c8575a3b87aba"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/iterators/primitive_iterator.hpp"
+          },
+          "hashes": {
+            "sha-256": "4be455f9b99b9f75a81ba333c1e2f2a382a41642f3b5a3fd7644bb15ee713494"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/iterators/iter_impl.hpp"
+          },
+          "hashes": {
+            "sha-256": "76e2bfa4adccc367c166cb7660d47087c0892e03bad0cd7908cfeba6175b4355"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/iterators/json_reverse_iterator.hpp"
+          },
+          "hashes": {
+            "sha-256": "6f072fb2b9e151ad9645cb03a9aa23231480bf447e53b2e0ecb41f45fb7503e1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/json_custom_base_class.hpp"
+          },
+          "hashes": {
+            "sha-256": "e622910868b019ba09460c96a6092c1018ed501f34cce4ed633641400c2d2500"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/json_pointer.hpp"
+          },
+          "hashes": {
+            "sha-256": "8a11f74003d3bf8cdfdcb0894b903af2568fb0de75f1e9b8cb6a7a08a95593b5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/json_ref.hpp"
+          },
+          "hashes": {
+            "sha-256": "5d133945d0859acaa82c50c1a044b1e1f806c0a38107eae24bf07ff5944fc1e3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/output/binary_writer.hpp"
+          },
+          "hashes": {
+            "sha-256": "d627daf30030a1ae67cebf5deaecdf255994e974ea70ef465a3bc5166f6ea856"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/output/output_adapters.hpp"
+          },
+          "hashes": {
+            "sha-256": "3322dce8f63e69930806bd8691c2cd9ece8a76b54b34f617641329c44559bbb5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/output/serializer.hpp"
+          },
+          "hashes": {
+            "sha-256": "d8dfaf0419a2d069d6195f302400c2b7aa183dfe0f2ae939e2a3ff41689f5d7a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/conversions/to_chars.hpp"
+          },
+          "hashes": {
+            "sha-256": "405bfd861074d8125b035e4e00214e489eacbd8916c47e81e76aabf57818815e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/ordered_map.hpp"
+          },
+          "hashes": {
+            "sha-256": "96cfc138fb53164d8740de602f7996053c6f5ed5f629438fb042cf8abee930c5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/detail/macro_unscope.hpp"
+          },
+          "hashes": {
+            "sha-256": "01f3ada82b5d23a160f03af857223e84594725ea42ecd5cb21f9c9e8bfbb3aeb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/nlohmann/thirdparty/hedley/hedley_undef.hpp"
+          },
+          "hashes": {
+            "sha-256": "ddf06784ca9448b4899db96a409ec1cbc65a0f682db9c966c011f00b77ae75c4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/joeyj/source/repos/cli_task_tracker/cli_task_tracker/cad.h"
+          },
+          "hashes": {
+            "sha-256": "61c6e16f52f6b606041c42a3ec37b69a5fd1efe03f2f25c877c4ed8a109e5021"
+          }
+        }
+      ]
+    }
+  ]
+}
