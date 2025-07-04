@@ -1,19 +1,19 @@
 {
     "tasks": [
         {
-            "done": false,
+            "done": "in progress",
             "id": 1,
-            "name": "upload this to my repo"
+            "name": "eat food"
         },
         {
-            "done": true,
+            "done": "done",
             "id": 2,
-            "name": "exercise"
+            "name": "do homework"
         },
         {
-            "done": false,
+            "done": "to do",
             "id": 3,
-            "name": "new task"
+            "name": "buy groceries"
         }
     ]
 }

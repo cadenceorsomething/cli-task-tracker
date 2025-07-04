@@ -9,7 +9,7 @@ namespace cad {
 
 	using json = nlohmann::json;
 
-	json		load_data		(const std::string filename) {
+	json		load_data			(const std::string filename) {
 		std::ifstream in_file(filename);
 		json data;
 
@@ -22,17 +22,17 @@ namespace cad {
 
 		return data;
 	}
-	void		save_data		(const json& data, const std::string filename) {
+	void		save_data			(const json& data, const std::string filename) {
 		std::ofstream out_file(filename);
 		out_file << data.dump(4);
 	}
-	std::string input_task_name	() {
+	std::string input_task_name		() {
 		std::string task;
 		std::cout << "Enter task name: ";
 		std::getline(std::cin, task);
 		return task;
 	}
-	int			generate_id		(const json& data) {
+	int			generate_id			(const json& data) {
 		const auto& tasks = data["tasks"];
 		int id = 1;
 
@@ -52,16 +52,16 @@ namespace cad {
 			++id;
 		}
 	}
-	void		add_task		(json& data, std::string task) {
-		data["tasks"].push_back({ {"id", generate_id(data)}, {"name", task}, {"done", false} });
+	void		add_task			(json& data, std::string task) {
+		data["tasks"].push_back({ {"id", generate_id(data)}, {"name", task}, {"done", "to do"}});
 	}
-	void		list_tasks		(const json& data) {
+	void		list_tasks			(const json& data) {
 		const auto& tasks = data["tasks"];
 		for (size_t i = 0; i < tasks.size(); ++i) {
-			std::cout << tasks[i]["id"] << ": " << tasks[i]["name"] << (tasks[i]["done"] ? " [x]" : " [ ]") << std::endl;
+			std::cout << tasks[i]["id"] << ": " << tasks[i]["name"] << "    -progress: " << tasks[i]["done"] << std::endl;
 		}
 	}
-	bool		delete_task		(json& data, int id_to_delete) {
+	bool		delete_task			(json& data, int id_to_delete) {
 		auto& tasks = data["tasks"];
 
 		for (auto it = tasks.begin(); it != tasks.end(); ++it) {
@@ -72,29 +72,40 @@ namespace cad {
 		}
 		return false;
 	}
-	bool		cross_out		(json& data, int id) {
+	bool		mark_done			(json& data, int id) {
 		auto& tasks = data["tasks"];
 		for (auto& task : tasks) {
 			if (task.contains("id") && task["id"] == id) {
-				task["done"] = true;
+				task["done"] = "done";
 				return true;
 			}
 
 		}
 		return false;
 	}
-	bool		remove_cross	(json& data, int id) {
+	bool		mark_in_progress	(json& data, int id) {
 		auto& tasks = data["tasks"];
 		for (auto& task : tasks) {
 			if (task.contains("id") && task["id"] == id) {
-				task["done"] = false;
+				task["done"] = "in progress";
 				return true;
 			}
 
 		}
 		return false;
 	}
-	bool		update_task		(json& data, std::string new_name, int id) {
+	bool		mark_to_do			(json& data, int id) {
+		auto& tasks = data["tasks"];
+		for (auto& task : tasks) {
+			if (task.contains("id") && task["id"] == id) {
+				task["done"] = "to do";
+				return true;
+			}
+
+		}
+		return false;
+	}
+	bool		update_task			(json& data, std::string new_name, int id) {
 		auto& tasks = data["tasks"];
 
 		for (auto& task : tasks) {
@@ -107,10 +118,10 @@ namespace cad {
 
 		return false;
 	}
-	inline bool	contains_id		(json::iterator it) {
+	inline bool	contains_id			(json::iterator it) {
 		return it->contains("id");
 	}
-	void		sort_tasks		(json& data) {
+	void		sort_tasks			(json& data) {
 		json& tasks = data["tasks"];
 
 		if (tasks.size() <= 1) return;
@@ -133,4 +144,27 @@ namespace cad {
 			}
 		}
 	}
+	void		list_done			(const json& data) {
+		const auto& tasks = data["tasks"];
+		for (size_t i = 0; i < tasks.size(); ++i) {
+			if (tasks[i]["done"] == "done")
+				std::cout << tasks[i]["id"] << ": " << tasks[i]["name"] << std::endl;
+		}
+	}
+	void		list_in_progress	(const json& data) {
+		const auto& tasks = data["tasks"];
+		for (size_t i = 0; i < tasks.size(); ++i) {
+			if (tasks[i]["done"] == "in progress")
+				std::cout << tasks[i]["id"] << ": " << tasks[i]["name"] << std::endl;
+		}
+	}
+	void		list_to_do			(const json& data) {
+		const auto& tasks = data["tasks"];
+		for (size_t i = 0; i < tasks.size(); ++i) {
+			if (tasks[i]["done"] == "to do")
+				std::cout << tasks[i]["id"] << ": " << tasks[i]["name"] << std::endl;
+		}
+	}
+
+
 }

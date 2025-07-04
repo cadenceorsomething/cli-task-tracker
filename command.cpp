@@ -18,18 +18,31 @@ namespace cmd {
 		cad::save_data(data, file_name);
 		return 0;
 	}
-	int handle_list			(const json& data) {
-		cad::list_tasks(data);
+	int handle_list			(const json& data, int argc, char* argv[]) {
+		if (argc < 3) {
+			cad::list_tasks(data);
+			return 0;
+		}
+		
+		std::string command = argv[2];
+
+		if      (command == "done")			cad::list_done			(data);
+		else if (command == "in-progress")	cad::list_in_progress	(data);
+		else if (command == "to-do")		cad::list_to_do			(data);
+		else {
+			std::cerr << "...invalid progress mark" << std::endl;
+			return 1;
+		}
 		return 0;
 	}
-	int handle_completed	(json& data, const std::string& file_name, int argc, char* argv[]) {
+	int handle_done			(json& data, const std::string& file_name, int argc, char* argv[]) {
 		if (argc < 3) {
 			std::cerr << "...missing id" << std::endl;
 			return 1;
 		}
 
 		int id = std::stoi(argv[2]);
-		if (!cad::cross_out(data, id)) {
+		if (!cad::mark_done(data, id)) {
 			std::cerr << "...couldn't find id" << std::endl;
 			return 1;
 		}
@@ -51,14 +64,29 @@ namespace cmd {
 		cad::save_data(data, file_name);
 		return 0;
 	}
-	int handle_incomplete	(json& data, const std::string& file_name, int argc, char* argv[]) {
+	int handle_to_do		(json& data, const std::string& file_name, int argc, char* argv[]) {
 		if (argc < 3) {
 			std::cerr << "...missing id" << std::endl;
 			return 1;
 		}
 
 		int id = std::stoi(argv[2]);
-		if (!cad::remove_cross(data, id)) {
+		if (!cad::mark_to_do(data, id)) {
+			std::cerr << "...couldn't find id" << std::endl;
+			return 1;
+		}
+		cad::save_data(data, file_name);
+
+		return 0;
+	}
+	int handle_in_progress	(json& data, const std::string& file_name, int argc, char* argv[]) {
+		if (argc < 3) {
+			std::cerr << "...missing id" << std::endl;
+			return 1;
+		}
+
+		int id = std::stoi(argv[2]);
+		if (!cad::mark_in_progress(data, id)) {
 			std::cerr << "...couldn't find id" << std::endl;
 			return 1;
 		}
