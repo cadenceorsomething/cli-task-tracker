@@ -1,0 +1,89 @@
+#include "command.h"
+#include "Cad.h"
+#include <iostream>
+#include "json.hpp"
+
+using json = nlohmann::json;
+
+
+namespace cmd {
+	int handle_add			(json& data, const std::string& file_name, int argc, char* argv[]) {
+		if (argc < 3) {
+			std::cerr << "...missing task description" << std::endl;
+			return 1;
+		}
+		std::string description = argv[2];
+		cad::add_task(data, description);
+		cad::sort_tasks(data);
+		cad::save_data(data, file_name);
+		return 0;
+	}
+	int handle_list			(const json& data) {
+		cad::list_tasks(data);
+		return 0;
+	}
+	int handle_completed	(json& data, const std::string& file_name, int argc, char* argv[]) {
+		if (argc < 3) {
+			std::cerr << "...missing id" << std::endl;
+			return 1;
+		}
+
+		int id = std::stoi(argv[2]);
+		if (!cad::cross_out(data, id)) {
+			std::cerr << "...couldn't find id" << std::endl;
+			return 1;
+		}
+		cad::save_data(data, file_name);
+
+		return 0;
+	}
+	int handle_delete		(json& data, const std::string& file_name, int argc, char* argv[]) {
+		if (argc < 3) {
+			std::cerr << "...missing id" << std::endl;
+			return 1;
+		}
+
+		int id = std::stoi(argv[2]);
+		if (!cad::delete_task(data, id)) {
+			std::cerr << "...couldn't find id" << std::endl;
+			return 1;
+		}
+		cad::save_data(data, file_name);
+		return 0;
+	}
+	int handle_incomplete	(json& data, const std::string& file_name, int argc, char* argv[]) {
+		if (argc < 3) {
+			std::cerr << "...missing id" << std::endl;
+			return 1;
+		}
+
+		int id = std::stoi(argv[2]);
+		if (!cad::remove_cross(data, id)) {
+			std::cerr << "...couldn't find id" << std::endl;
+			return 1;
+		}
+		cad::save_data(data, file_name);
+
+		return 0;
+	}
+	int handle_update		(json& data, const std::string& file_name, int argc, char* argv[]) {
+		if (argc < 3) {
+			std::cerr << "...missing id" << std::endl;
+			return 1;
+		}
+		int id = std::stoi(argv[2]);
+		if (argc < 4) {
+			std::cerr << "... you were supposed to enter ''UPDATED TASK''." << std::endl;
+			return 1;
+		}
+		std::string updated_desc = argv[3];
+		cad::update_task(data, updated_desc, id);
+		cad::save_data(data, file_name);
+	}
+
+	int default_message	() {
+		std::cout << "...enter a valid <COMMAND>" << std::endl;
+		return 1;
+	}
+}
+

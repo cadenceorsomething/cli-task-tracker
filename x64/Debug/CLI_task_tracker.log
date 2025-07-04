@@ -1,2 +1,5 @@
-﻿  tasks.cpp
+﻿  command.cpp
+  tasks.cpp
+  Generating Code...
+C:\Users\joeyj\source\repos\CLI_task_tracker\CLI_task_tracker\command.cpp(82,1): warning C4715: 'cmd::handle_update': not all control paths return a value
   CLI_task_tracker.vcxproj -> C:\Users\joeyj\source\repos\CLI_task_tracker\x64\Debug\CLI_task_tracker.exe
